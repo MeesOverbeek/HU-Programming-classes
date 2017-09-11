@@ -1,4 +1,4 @@
-lst = [3,7,21]
+lst = [-8, 3, 7, 21]
 print(lst)
 
 print(min(lst))
