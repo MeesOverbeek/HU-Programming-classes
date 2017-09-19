@@ -3,7 +3,7 @@ b = 7
 
 c = (a + b)/2
 
-inventaris = 'papier', 'nietjes', 'pennen'
+inventaris = ['papier', 'nietjes', 'pennen']
 print(inventaris)
 
 voornaam = 'Mees'
