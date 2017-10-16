@@ -1,4 +1,4 @@
-lst = ['Maandag', 'Dinsdag', 'Woensdag']
+dagen = ['Maandag', 'Dinsdag', 'Woensdag']
 
-for char in lst:
+for char in dagen:
     print(char[ :2])
