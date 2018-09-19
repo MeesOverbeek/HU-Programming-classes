@@ -1,5 +1,0 @@
-           Geordend    Muteerbaar  Iterable Dubbele waarden toegestaan
-Tuple      Nee         Nee         Ja       Ja
-Dictonairy Nee         Nee         Ja       Nee
-Set        Nee         Nee         Ja       Nee
-List       Nee         Ja          Ja       Ja
