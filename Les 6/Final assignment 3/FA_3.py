@@ -1,21 +1,20 @@
 def toon_aantal_kluizen_vrij():
-    lst = []
+    Kluizenlijst = []
     inhoud = open('kluizen.txt')
     reader = inhoud.readlines()
-    for x in reader:
-        if x != '\n':
-            lst.append(x.strip().split(';'))
-    vrij = 12 - len(lst)
-    print('Er zijn ' + str(vrij) + ' kluisjes vrij')
-
+    for kluis in reader:
+        if kluis != '\n':
+            Kluizenlijst.append(kluis.strip().split(';'))
+    vrij = 12 - len(Kluizenlijst)
+    print('Er zijn ' + str(vrij) + ' kluisjes vrij' '\n')
     vol = []
     kluisnummers = []
-    for x in lst:
-        kluisnummers.append(int(x[0]))
-    for x in kluisnummers:
-        if x in kluisnummers:
-            vol.append(x)
-    print("De kluisjes/het kluisje- " + str(vol).strip("[").strip("]") + " -is/zijn bezet.\n")
+    for kluis in Kluizenlijst:
+        kluisnummers.append(int(kluis[0]))
+    for kluis in kluisnummers:
+        if kluis in kluisnummers:
+            vol.append(kluis)
+    print("De kluisjes " + str(vol).strip("[").strip("]") + " zijn bezet.\n")
 
 
 def nieuwe_kluis():
@@ -24,17 +23,17 @@ def nieuwe_kluis():
     vol =[]
     content = open('kluizen.txt','r')
     reader = content.readlines()
-    for x in reader:
-        if x != '\n':
-            lst.append(x.strip().split(';'))
-    for x in lst:
-        kluisnummers.append((int(x[0])))
-    for x in kluisnummers:
-        if x in kluisnummers:
-            vol.append(x)
-    print("De kluisjes " + str(vol).strip("[").strip("]") + " zijn bezet.")
+    for Kluis in reader:
+        if Kluis != '\n':
+            lst.append(Kluis.strip().split(';'))
+    for Kluis in lst:
+        kluisnummers.append((int(Kluis[0])))
+    for Kluis in kluisnummers:
+        if Kluis in kluisnummers:
+            vol.append(Kluis)
+    print("De kluisjes- " + str(vol).strip("[").strip("]") + " -zijn bezet.")
     content.close()
-    nummer = int(input('Voer een kluisnummer in '))
+    nummer = int(input('Voer een kluisnummer in: '))
     if len(kluisnummers) == 12:
         print('Er zijn geen kluisjes meer vrij\n')
         nieuwe_kluis()
@@ -42,7 +41,7 @@ def nieuwe_kluis():
         print('Dat kluisje is bezet\n')
         nieuwe_kluis()
     elif nummer not in kluisnummers and nummer <13 and nummer > 0:
-        code = input('Voer een kluiscode in ')
+        code = input('Voer een kluiscode in: ')
         content = open('kluizen.txt','a')
         content.write(str('\n')+'{};{}'.format(nummer, code))
         print('U heeft kluisje ' + str(nummer)+' gekregen\n')
@@ -55,8 +54,8 @@ def nieuwe_kluis():
 
 def kluis_openen():
     lst = []
-    nummer = input('Voer een kluisnummer in ')
-    code = input('Voer uw code in ')
+    nummer = input('Voer een kluisnummer in: ')
+    code = input('Voer uw code in: ')
     content = open('kluizen.txt')
     reader = content.readlines()
     content.close()
@@ -75,7 +74,7 @@ def kluis_openen():
 
 while True:
     print('1: Ik wil weten hoeveel kluizen nog vrij zijn\n2: Ik wil een nieuwe kluis\n3: Ik wil toegang tot mijn klas\n4: Sluit af')
-    user = input('Maak uw keuze ')
+    user = input('Maak uw keuze: ')
     if user == '1':
         toon_aantal_kluizen_vrij()
     elif user == '2':

@@ -1,24 +1,24 @@
 def ticker(filename):
     content = open(filename, 'r')
     reader = content.readlines()
-    ijlst = []
-    for x in reader:
-        ijlst.append(x.strip().split(':'))
-    dic = {}
-    for x in ijlst:
-        key = x[0]
-        value = x[1]
-        dic[key] = value
-    print(dic)
+    Lijst = []
+    for Ticker_or_company in reader:
+        Lijst.append(Ticker_or_company.strip().split(':'))
+    company_and_ticker_Dictionary = {}
+    for Ticker_or_company in Lijst:
+        key = Ticker_or_company[0]
+        value = Ticker_or_company[1]
+        company_and_ticker_Dictionary[key] = value
+    print(company_and_ticker_Dictionary)
 
-    lst2 = []
-    for x in dic.values():
-        lst2.append(x)
+    Lijst2 = []
+    for Ticker_or_company in company_and_ticker_Dictionary.values():
+        Lijst2.append(Ticker_or_company)
     company = input('Voer een bedrijfsnaam in: ')
-    if company in dic:
-        print(dic[company])
-    elif company not in dic:
-        for x,y  in dic.items():
+    if company in company_and_ticker_Dictionary:
+        print(company_and_ticker_Dictionary[company])
+    elif company not in company_and_ticker_Dictionary:
+        for Ticker_or_company,y  in company_and_ticker_Dictionary.items():
             if y == company:
-                print(x)
+                print(Ticker_or_company)
 ticker('ticker.txt')

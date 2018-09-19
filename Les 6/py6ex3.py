@@ -5,8 +5,8 @@ maximum = max(numbers)
 minimum = min(numbers)
 count = len(numbers)
 som = int()
-for x in numbers:
-    som +=int(x)
+for number in numbers:
+    som +=int(number)
 average = som/count
 print('Gesorteerde list van ints: ' + str(numbers))
 print('Grootste getal: ' + str(maximum) + ' en het Kleinste getal ' + str(minimum))

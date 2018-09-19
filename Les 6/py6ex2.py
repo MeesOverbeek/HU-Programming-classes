@@ -1,8 +1,8 @@
-lst_oud = eval(input('Geef een lijst met minimaal 10 strings op: '))
+input_list = eval(input('Geef een lijst met minimaal 10 strings op: '))
 lst = []
-if len(lst_oud) >= 10:
-    for x in lst_oud:
-        lst.append(x)
+if len(input_list) >= 10:
+    for item in input_list:
+        lst.append(item)
     print(lst)
 else:
     print('De lijst is niet 10 strings')

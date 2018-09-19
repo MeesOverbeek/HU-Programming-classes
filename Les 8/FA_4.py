@@ -25,10 +25,10 @@ def inlezen_eindstation(stations,beginstation):
             eind = input('Wat is je eindstation?: ')
 
 def omroepen_reis(stations, beginstation, eindstation):
-    afstand = stations.index(eindstation)-stations.index(beginstation)
+    afstand = stations.index(eindstation) - stations.index(beginstation)
     ritprijs = int(afstand) * 5
     print('Het beginstation ' + str(beginstation) + ' is het ' + str(stations.index(beginstation)+1) + 'e in het traject')
-    print('Het eindstation '+ str(eindstation)+' is het ' + str(stations.index(eindstation) + 1) + 'e in het traject')
+    print('Het eindstation ' + str(eindstation)+' is het ' + str(stations.index(eindstation) + 1) + 'e in het traject')
     print('De afstand bedraagt ' + str(afstand) + ' station(s)')
     print('De prijs van het kaartje is ' + str(ritprijs) + ' euro')
     print('Jij stapt in de trein in: ' + str(beginstation))
